@@ -11,7 +11,7 @@ resource "aws_lambda_function" "this" {
 }
 
 resource "aws_iam_role" "lambda_exec" {
-  name = "lambda_exec_role_${var.function_name}"
+  name = "lambda_exec_role_lambda1"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
 
