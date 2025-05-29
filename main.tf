@@ -7,7 +7,7 @@ module "vpc" {
 }
 
 resource "aws_s3_bucket" "test_bucket" {
-  bucket = "my-lab-bucket-${random_id.suffix.hex}"
+  bucket = "my-lab-bucket-123"
 }
 
 resource "random_id" "suffix" {
