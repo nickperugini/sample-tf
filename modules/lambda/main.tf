@@ -22,7 +22,7 @@ resource "aws_lambda_function" "this_second" {
   }
 }
 
-resource "aws_lambda_function" "this_third_no_vpc" {
+resource "aws_lambda_function" "this_third" {
   function_name = this_second_lambda
   role          = aws_iam_role.lambda_exec.arn
   handler       = "lambda_function.lambda_handler"
