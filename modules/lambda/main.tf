@@ -22,6 +22,14 @@ resource "aws_lambda_function" "this_second" {
   }
 }
 
+resource "aws_lambda_function" "this_third_no_vpc" {
+  function_name = this_second_lambda
+  role          = aws_iam_role.lambda_exec.arn
+  handler       = "lambda_function.lambda_handler"
+  runtime       = "python3.9"
+  filename      = data.archive_file.lambda_zip.output_path
+}
+
 resource "aws_iam_role" "lambda_exec" {
   name = "lambda_exec_role_lambda1"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
